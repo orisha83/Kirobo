@@ -6,8 +6,8 @@ const hdkey = require('hdkey');
 
 const LoginScreenComp = () =>
 {
-    const [mnemonic, setMnemonic] = useState("fringe mule question advice cake dilemma exhibit absurd enjoy thrive typical march screen enemy surface")
-    const [path, setPath] = useState("m/44'/60'/0'/0")
+    const [mnemonic, setMnemonic] = useState("")
+    const [path, setPath] = useState("")
     const [balance, setBalance] = useState("")
     const [address, setAddress] = useState("")
 
@@ -29,11 +29,11 @@ const LoginScreenComp = () =>
         <Form>
             <Form.Field>
                 <label>Mnemonic :</label>
-                <input placeholder='Mnemonic' type="text" onChange={e => setMnemonic(e.value)}/>
+                <input placeholder='Mnemonic' type="text" onChange={e => setMnemonic(e.target.value)}/>
             </Form.Field>
             <Form.Field>
                 <label>Path :</label>
-                <input placeholder='Path' type="text" onChange={e => setPath(e.value)}/>
+                <input placeholder='Path' type="text" onChange={e => setPath(e.target.value)}/>
             </Form.Field>
             <Form.Field> 
             <Button onClick={createAccount}>Generate account</Button>
